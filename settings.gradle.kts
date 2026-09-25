@@ -24,3 +24,4 @@ include(":utils")
 
 rootProject.name = "kzork"
 include("model")
+include("tools")
