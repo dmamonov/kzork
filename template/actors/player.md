@@ -1,10 +1,10 @@
 # {{Player name}}
 
-| Field | Value |
-|---|---|
-| ID | player |
-| Controlled by | Player |
-| Location | [Cell 0, 0](../cells/cell-0-0.md) |
+| Field         | Value                             |
+|---------------|-----------------------------------|
+| ID            | player                            |
+| Controlled by | Player                            |
+| Location      | [Cell 0, 0](../cells/cell-0-0.md) |
 
 ## Description
 

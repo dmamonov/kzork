@@ -1,10 +1,10 @@
 # {{Actor name}}
 
-| Field | Value |
-|---|---|
-| ID | actor-001 |
-| Controlled by | Actor agent |
-| Location | [Cell 0, 0](../cells/cell-0-0.md) |
+| Field         | Value                             |
+|---------------|-----------------------------------|
+| ID            | actor-001                         |
+| Controlled by | Actor agent                       |
+| Location      | [Cell 0, 0](../cells/cell-0-0.md) |
 
 ## Description
 
@@ -12,7 +12,8 @@
 
 ## Current state
 
-{{Current condition, intentions, and other relevant mutable facts. The visibility of private actor information remains to be designed.}}
+{{Current condition, intentions, and other relevant mutable facts. The visibility of private actor information remains
+to be designed.}}
 
 ## Carried objects
 

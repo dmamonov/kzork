@@ -1,14 +1,14 @@
 # Current game state
 
-| Field | Value |
-|---|---|
-| Game | [Game](game.md) |
-| Player | [Player](actors/player.md) |
-| Current cell | [Cell 0, 0](cells/cell-0-0.md) |
-| Loop phase | awaiting-command |
-| Last applied step | None |
-| Active step | None |
-| Next step number | 0001 |
+| Field             | Value                          |
+|-------------------|--------------------------------|
+| Game              | [Game](game.md)                |
+| Player            | [Player](actors/player.md)     |
+| Current cell      | [Cell 0, 0](cells/cell-0-0.md) |
+| Loop phase        | awaiting-command               |
+| Last applied step | None                           |
+| Active step       | None                           |
+| Next step number  | 0001                           |
 
 ## Global state
 

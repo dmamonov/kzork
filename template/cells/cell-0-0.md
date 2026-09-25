@@ -1,10 +1,10 @@
 # {{Cell name}}
 
-| Field | Value |
-|---|---|
-| ID | cell-0-0 |
-| Coordinates | (0, 0) |
-| World | [Grid](../world.md) |
+| Field       | Value               |
+|-------------|---------------------|
+| ID          | cell-0-0            |
+| Coordinates | (0, 0)              |
+| World       | [Grid](../world.md) |
 
 ## Description
 
@@ -35,7 +35,8 @@
 
 ## Movement
 
-{{Local movement conditions. Ordinary grid adjacency rules are still undecided. Exceptional connections are indexed in world.md.}}
+{{Local movement conditions. Ordinary grid adjacency rules are still undecided. Exceptional connections are indexed in
+world.md.}}
 
 ## Changelog
 

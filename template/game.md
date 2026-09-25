@@ -1,11 +1,11 @@
 # {{Game title}}
 
-| Field | Value |
-|---|---|
-| ID | game-001 |
-| Current state | [State](state.md) |
-| World | [Grid](world.md) |
-| Player | [Player](actors/player.md) |
+| Field         | Value                      |
+|---------------|----------------------------|
+| ID            | game-001                   |
+| Current state | [State](state.md)          |
+| World         | [Grid](world.md)           |
+| Player        | [Player](actors/player.md) |
 
 ## Description
 

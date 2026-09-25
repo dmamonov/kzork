@@ -1,8 +1,8 @@
 # {{Object name}}
 
-| Field | Value |
-|---|---|
-| ID | object-001 |
+| Field    | Value                             |
+|----------|-----------------------------------|
+| ID       | object-001                        |
 | Location | [Cell 0, 0](../cells/cell-0-0.md) |
 
 ## Description
