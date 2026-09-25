@@ -1,6 +1,7 @@
 ---
 id: actor-001
 controlled_by: actor-agent
+# Derived automatically from authoritative membership references.
 location: ../cells/cell-0-0.md
 carried_objects: []
 ---
@@ -21,3 +22,5 @@ to be designed.}}
 - Initialization: created the actor in cell-0-0.
 
 - Template revision: moved structured fields into YAML front matter.
+
+- Template revision: marked location as automatically derived from membership.

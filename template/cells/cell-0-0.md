@@ -2,6 +2,7 @@
 id: cell-0-0
 coordinates: {x: 0, y: 0}
 world: ../world.md
+# Authoritative placement references; entity locations are derived from these lists.
 objects:
   - ../objects/object-001.md
 actors:
@@ -37,3 +38,5 @@ world.md.}}
 - Initialization: placed the sample object, actor, and player in this cell.
 
 - Template revision: moved structured fields into YAML front matter.
+
+- Template revision: identified occupant lists as authoritative placement data.

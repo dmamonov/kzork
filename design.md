@@ -81,7 +81,44 @@ template/
 
 Entity pages own their descriptions and local state. `state.md` holds global state and loop progress rather than copying every entity's state. `world.md` indexes the grid and special connections.
 
-The draft shows locations on entity pages and occupant references on cell pages. A move must update both. Carried objects similarly reference an actor and appear in its inventory. The player's cell is also reflected in `state.md`. These references must agree after an applied turn; whether to keep all these indexes is still open.
+Cell occupant references are authoritative for placement. An entity's `location` is derived automatically from those references, including for actors and the player. The updater changes membership; formal rules maintain the corresponding location fields. `state.md.current_cell` is derived from the player's placement.
+
+### Formal-logic update
+
+Every turn has a deterministic consistency stage after its explicit changes. The game master determines outcomes; the state-update agent translates them into source-data changes; formal rules derive dependent fields. This stage does not invent events or interpret narrative prose.
+
+Only designated YAML membership fields establish placement. A mention in a description, step, changelog, or ordinary Markdown link does not place an entity anywhere. Resolve relative references to the same entity before comparing them.
+
+For a cell `c` and entity `e` (object or actor, including the player):
+
+```text
+cell_member(c, e) := e is referenced in c.objects or c.actors
+cell_member(c, e) => location(e) = c
+current_cell := location(player)
+```
+
+`location` and `current_cell` are materialized derived fields: the automatic stage writes their current values into Markdown header metadata. They are not independent inputs. Changing an entity's `location` alone cannot move it; it is recomputed from membership.
+
+Proposed extension for the existing inventory model:
+
+```text
+inventory_member(a, o) := object o is referenced in actor a.carried_objects
+inventory_member(a, o) => location(o) = a
+inventory_member(a, o) and location(a) = c => effective_cell(o) = c
+```
+
+Here `location` means the immediate holder; `effective_cell` is the inferred cell of a carried object, not an additional stored field. A carried object is not also listed among the cell's loose objects. Inventory rules remain a draft extension of the agreed cell-reference rule.
+
+Draft validation rules:
+
+- An actor, including the player, belongs to exactly one cell. A present object belongs to exactly one cell or actor inventory.
+- Multiple holders are a conflict; do not choose a location arbitrarily. Missing membership is also a validation failure until rules for absent or destroyed entities are designed.
+- Referenced entities must exist and match their list's type (`objects`, `actors`, or `carried_objects`).
+- Validate the complete proposed changes together, so removing an old membership and adding a new one form one move.
+
+Example: moving the player from cell A to cell B removes its reference from A's `actors` and adds it to B's `actors`. The formal stage automatically updates `player.location` and `state.current_cell`. Each changed page, including automatically changed pages, receives a changelog entry identifying the step and the source change or rule responsible.
+
+The update order is: prepare explicit changes, validate memberships, derive dependent fields, record all changed pages and changelogs, then mark the step applied. A failed validation prevents the turn from being marked applied. Rerunning derivation on unchanged inputs produces no additional field changes or duplicate changelog entries. Atomic storage and failure recovery mechanisms remain to be designed.
 
 The step record distinguishes proposed actions, resolved outcomes, and applied changes. Proposed phases in `state.md` are `awaiting-command`, `resolving`, and `applying`. Only after all required changes are applied should the next command begin. Exact handling of interrupted updates, retries, and partial failures remains to be designed.
 
@@ -99,7 +136,8 @@ Candidate operations for discussion:
 | Find by ID or grid coordinate | Locate a known entity or cell |
 | Search text | Discover relevant descriptions or history when the exact page is unknown |
 | Create or update a page with a changelog entry | Persist a game-master outcome |
-| Move an entity | Keep location and occupant/inventory references consistent |
+| Move an entity | Change authoritative membership references |
+| Apply formal rules | Validate membership and automatically derive locations and the player's current cell |
 | Record and apply a step | Relate resolved events to their persistent updates |
 | Generate and attach media | Supply images, audio, and narration |
 
@@ -127,3 +165,5 @@ Discuss one area at a time, beginning with the storage draft:
 - Initial draft: consolidated the agreed model and turn loop; added explicitly provisional storage, tool, and UI design notes.
 
 - Design revision: adopted YAML header metadata for structured fields and documented reference, media, and value conventions.
+
+- Design revision: made cell membership authoritative and documented formal derivation of locations, with draft inventory and validation rules.

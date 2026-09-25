@@ -9,8 +9,12 @@ one actor, and the player. [step0001.md](steps/step-0001.md) is an empty turn te
 Replace `{{...}}` placeholders when creating actual content. Duplicate entity pages with unique IDs and update their
 relative paths. Keep each page's current content and bottom changelog in sync. Update media metadata status when the referenced files exist; see [media guidance](media/README.md).
 
+Cell occupant references establish placement. Entity `location` fields and `state.current_cell` are derived automatically; see the formal-logic update rules in [design.md](../design.md). Inventory membership is a proposed extension.
+
 ## Changelog
 
 - Initialization: created the storage draft.
 
 - Template revision: documented YAML header metadata and media references.
+
+- Template revision: documented authoritative membership and derived locations.

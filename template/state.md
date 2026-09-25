@@ -1,6 +1,7 @@
 ---
 game: game.md
 player: actors/player.md
+# Derived automatically from the player's cell membership.
 current_cell: cells/cell-0-0.md
 loop_phase: awaiting-command
 last_applied_step: null
@@ -20,3 +21,5 @@ pending_work: []
 - Initialization: established the illustrative starting location and initial loop phase.
 
 - Template revision: moved structured fields into YAML front matter.
+
+- Template revision: marked current_cell as automatically derived.
