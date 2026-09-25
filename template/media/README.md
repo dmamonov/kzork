@@ -6,10 +6,12 @@ narration in `voice/`.
 No media has been generated. `.gitkeep` files preserve the empty directories and are not game assets. Example filenames
 and formats on the pages are provisional.
 
-Reference actual assets with relative Markdown links from the relevant game, cell, or step page. Keep narration source
+Reference assets in YAML front matter on the relevant game, cell, or step page, using paths relative to that page and an explicit generation status. Optional body links can present existing assets. Keep narration source
 text in Markdown. When an asset reference changes, update that page's content and changelog. How historical media
 versions are retained remains undecided.
 
 ## Changelog
 
 - Initialization: documented the draft media directories.
+
+- Template revision: documented media references in YAML front matter.

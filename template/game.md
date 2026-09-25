@@ -1,21 +1,19 @@
-# {{Game title}}
+---
+id: game-001
+state_file: state.md
+world: world.md
+player: actors/player.md
+media:
+  cover_image: {path: media/images/game-cover.png, status: not-generated}
+  music: {path: media/music/game-theme.ogg, status: not-generated}
+  intro_speech: {path: media/voice/game-intro.ogg, status: not-generated}
+---
 
-| Field         | Value                      |
-|---------------|----------------------------|
-| ID            | game-001                   |
-| Current state | [State](state.md)          |
-| World         | [Grid](world.md)           |
-| Player        | [Player](actors/player.md) |
+# {{Game title}}
 
 ## Description
 
 {{Overall premise, setting, and description of the game.}}
-
-## Presentation
-
-- Cover image: `media/images/game-cover.png` (not generated)
-- Music: `media/music/game-theme.ogg` (not generated)
-- Intro speech audio: `media/voice/game-intro.ogg` (not generated)
 
 ## Intro speech
 
@@ -28,3 +26,5 @@
 ## Changelog
 
 - Initialization: created the game page.
+
+- Template revision: moved structured fields into YAML front matter.

@@ -1,23 +1,22 @@
-# Current game state
+---
+game: game.md
+player: actors/player.md
+current_cell: cells/cell-0-0.md
+loop_phase: awaiting-command
+last_applied_step: null
+active_step: null
+next_step_number: 1
+pending_work: []
+---
 
-| Field             | Value                          |
-|-------------------|--------------------------------|
-| Game              | [Game](game.md)                |
-| Player            | [Player](actors/player.md)     |
-| Current cell      | [Cell 0, 0](cells/cell-0-0.md) |
-| Loop phase        | awaiting-command               |
-| Last applied step | None                           |
-| Active step       | None                           |
-| Next step number  | 0001                           |
+# Current game state
 
 ## Global state
 
 {{Global facts that do not belong to an individual cell, object, or actor.}}
 
-## Pending work
-
-None. During a turn, record any pending actor resolutions or file updates here, with a reference to its step record.
-
 ## Changelog
 
 - Initialization: established the illustrative starting location and initial loop phase.
+
+- Template revision: moved structured fields into YAML front matter.

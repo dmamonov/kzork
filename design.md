@@ -69,9 +69,10 @@ template/
 
 ### Draft Markdown conventions
 
-- Use a small Markdown metadata table, followed by named sections. No separate database or JSON state is proposed.
+- Store structured fields in YAML front matter between `---` delimiters at the very beginning of each game data page. Use metadata for IDs, references, coordinates, loop status, inventories, media, and other structured state properties. Keep descriptions, narration, narrative state, and changelogs in the Markdown body. No separate database or JSON state is proposed.
 - Each game entity has a stable ID. Display names and descriptions may change without changing its ID.
-- Use relative Markdown links for references to existing pages. Media paths remain inline-code placeholders until assets exist, then become links.
+- Metadata references are plain relative path strings, resolved from the containing file. Body references use relative Markdown links. Media metadata records a path and status; `not-generated` paths are planned assets, not existing files.
+- Use YAML `null` for absent values and `[]` for empty lists. Step numbers are integers, padded to four digits in filenames (for example, `1` becomes `step0001.md`). Quote textual placeholders in metadata. Avoid duplicating structured fields in body tables or lists.
 - `{{...}}` marks content to supply. Placeholder values are not actual game state.
 - Each page ends with `## Changelog`. Entries identify the step, what changed, and why. Initialization is identified separately.
 - The templates show possible fields, not a finalized parser schema. New state properties can be introduced as needed; constraints will be designed with the tools.
@@ -124,3 +125,5 @@ Discuss one area at a time, beginning with the storage draft:
 ## Changelog
 
 - Initial draft: consolidated the agreed model and turn loop; added explicitly provisional storage, tool, and UI design notes.
+
+- Design revision: adopted YAML header metadata for structured fields and documented reference, media, and value conventions.

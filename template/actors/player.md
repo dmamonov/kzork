@@ -1,10 +1,11 @@
-# {{Player name}}
+---
+id: player
+controlled_by: player
+location: ../cells/cell-0-0.md
+carried_objects: []
+---
 
-| Field         | Value                             |
-|---------------|-----------------------------------|
-| ID            | player                            |
-| Controlled by | Player                            |
-| Location      | [Cell 0, 0](../cells/cell-0-0.md) |
+# {{Player name}}
 
 ## Description
 
@@ -14,10 +15,8 @@
 
 {{Current condition and other relevant mutable facts.}}
 
-## Carried objects
-
-None.
-
 ## Changelog
 
 - Initialization: created the player in cell-0-0.
+
+- Template revision: moved structured fields into YAML front matter.
