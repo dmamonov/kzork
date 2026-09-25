@@ -1,4 +1,4 @@
-package org.example.model
+package kzork.model
 
 /** A path relative to the Markdown page containing this reference, not an entity ID. */
 @JvmInline

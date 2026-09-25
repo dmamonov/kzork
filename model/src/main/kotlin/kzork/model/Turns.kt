@@ -1,4 +1,4 @@
-package org.example.model
+package kzork.model
 
 data class GameStateMetadata(
     val game: PageReference,

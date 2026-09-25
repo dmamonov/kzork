@@ -1,4 +1,4 @@
-package org.example.model
+package kzork.model
 
 data class GameMetadata(
     val id: EntityId,
