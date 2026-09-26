@@ -1,19 +1,23 @@
 plugins {
-    // Apply the shared build logic from a convention plugin.
-    // The shared code is located in `buildSrc/src/main/kotlin/kotlin-jvm.gradle.kts`.
     id("buildsrc.convention.kotlin-jvm")
-
-    // Apply the Application plugin to add support for building an executable JVM application.
+    alias(libs.plugins.kotlinPluginSerialization)
     application
 }
 
+val ktorVersion = "3.2.3"
 dependencies {
-    // Project "app" depends on project "utils". (Project paths are separated with ":", so ":utils" refers to the top-level "utils" project.)
-    implementation(project(":utils"))
+    implementation(project(":model"))
+    implementation(project(":tools"))
+    implementation(libs.kotlinxSerialization)
+    implementation(libs.kotlinxCoroutines)
+    implementation("io.ktor:ktor-server-cio:$ktorVersion")
+    implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
+    implementation("io.ktor:ktor-client-cio:$ktorVersion")
+    implementation("org.slf4j:slf4j-simple:2.0.17")
+    testImplementation(kotlin("test"))
+    testImplementation("io.ktor:ktor-server-test-host:$ktorVersion")
 }
-
-application {
-    // Define the Fully Qualified Name for the application main class
-    // (Note that Kotlin compiles `App.kt` to a class with FQN `com.example.app.AppKt`.)
-    mainClass = "org.example.app.AppKt"
-}
+application { mainClass = "kzork.app.AppKt" }
+tasks.named<JavaExec>("run") { workingDir = rootProject.projectDir }
+tasks.test { systemProperty("fixture.directory", rootProject.file("games/ice_dungeon").absolutePath) }

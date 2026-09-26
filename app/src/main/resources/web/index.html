@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="game-token" content="__TOKEN__">
+  <meta name="theme-color" content="#0b151b">
+  <title>The Ice Dungeon · Kzork</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Kzork, back to beginning"><span class="sigil">◇</span> KZORK <span class="brand-divider">/</span> <span class="game-name">The Ice Dungeon</span></a>
+    <div class="toolbar">
+      <span id="mode" class="mode">CONNECTING</span>
+      <button id="sound-button" class="icon-button" aria-label="Audio settings" aria-expanded="false" aria-controls="audio-panel">♫ <span>Sound</span></button>
+      <button id="agent-button" class="outlined" aria-expanded="false" aria-controls="agent-panel">◇ <span>Agent plays</span></button>
+    </div>
+  </header>
+  <aside id="audio-panel" class="panel" hidden>
+    <div class="panel-heading"><h2>Set the atmosphere</h2><button class="close-panel" aria-label="Close audio settings">×</button></div>
+    <label>Ambient music <input id="music-volume" type="range" min="0" max="100" value="25"></label>
+    <label>Sound effects <input id="effects-volume" type="range" min="0" max="100" value="35"></label>
+    <label>Narration <input id="voice-volume" type="range" min="0" max="100" value="80"></label>
+    <label class="switch-row"><input id="narrate" type="checkbox" checked> Read new messages aloud</label>
+    <div class="panel-actions"><button id="mute" class="outlined">Mute all</button><button id="stop-voice" class="text-button">Stop narration</button></div>
+    <p class="quiet">Audio starts after you begin. Your command interrupts narration.</p>
+    <p id="audio-note" class="quiet" role="status"></p>
+  </aside>
+  <aside id="agent-panel" class="panel" hidden>
+    <div class="panel-heading"><h2>Watch the story unfold</h2><button class="close-panel" aria-label="Close agent settings">×</button></div>
+    <p id="agent-description">A player agent explores using the same clues you see. You can take back control at any time.</p>
+    <label>Play for <select id="turn-budget"><option value="5">5 turns</option><option value="20" selected>20 turns</option><option value="50">50 turns</option></select></label>
+    <button id="start-agent" class="primary">Let the agent play →</button>
+    <p class="quiet">Pause waits for the current turn to finish.</p>
+  </aside>
+  <main id="top">
+    <div class="chapter-heading"><span class="eyebrow">AN INTERACTIVE ADVENTURE</span><span class="chapter-rule"></span><span class="chapter-number">01</span></div>
+    <section id="welcome" class="welcome">
+      <div class="cover-wrap"><img src="/art/game.svg" alt="A warm light deep inside a blue ice cavern" class="cover"><span class="image-caption">BENEATH THE GLACIER</span></div>
+      <p class="eyebrow gold">A SMALL LIGHT. A LONG WINTER.</p>
+      <h1>The Ice Dungeon</h1>
+      <p class="lede">The village hearth has gone cold. Somewhere beneath the glacier, a small sun is waiting to be found.</p>
+      <button id="begin" class="primary">Begin adventure <span>→</span></button>
+      <p class="welcome-note">Explore at your own pace. Headphones recommended.</p>
+    </section>
+    <section id="transcript" aria-label="Adventure transcript" aria-live="polite" aria-relevant="additions"></section>
+    <div id="activity" class="activity" hidden><span class="pulse-dot"></span><span id="activity-text">The world is listening</span></div>
+    <div id="win" class="victory" hidden><span class="sigil">✧</span><h2>You brought back the dawn.</h2><p>Your adventure is complete. Every step remains here in your story.</p></div>
+    <div id="bottom"></div>
+  </main>
+  <button id="jump" class="jump" hidden>New events ↓</button>
+  <footer class="composer-shell">
+    <div class="composer-meta"><span id="location-label">THE ENTRANCE</span><span id="control-label">YOU ARE THE HEARTH KEEPER</span></div>
+    <div id="auto-status" class="auto-status" hidden><span id="auto-text">The agent is playing</span><button id="pause-agent" class="text-button">Take control ▪</button></div>
+    <form id="command-form" autocomplete="off">
+      <label class="sr-only" for="command">Your next action</label><span class="prompt-mark">›</span>
+      <input id="command" name="command" maxlength="500" placeholder="What will you do?" disabled>
+      <button id="send" type="submit" aria-label="Send command" disabled>↑</button>
+    </form>
+    <div class="composer-bottom"><div id="suggestions"><button data-command="look">Look around</button><button data-command="inventory">Inventory</button><button data-command="help">Help</button></div><span id="save-status">Your story saves as you play</span></div>
+    <div id="connection-error" class="connection-error" role="alert" hidden></div>
+    <button id="retry" class="outlined" hidden>Retry pending update</button>
+  </footer>
+</body>
+</html>

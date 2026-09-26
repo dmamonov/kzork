@@ -8,7 +8,7 @@ import org.yaml.snakeyaml.Yaml
 import org.yaml.snakeyaml.constructor.SafeConstructor
 
 /** Unknown header fields and narrative sections survive edits. YAML comments are presentation only. */
-internal data class MarkdownDocument(val metadata: JsonObject, val body: String, val history: String) {
+data class MarkdownDocument(val metadata: JsonObject, val body: String, val history: String) {
     fun render(): String {
         val options = DumperOptions().apply { defaultFlowStyle = DumperOptions.FlowStyle.BLOCK; isPrettyFlow = true
             width = MarkdownFormatting.MAX_LINE_WIDTH; splitLines = true }
