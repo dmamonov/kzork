@@ -16,15 +16,19 @@ media:
 
 ## Description
 
-A low workbench stands beside an open doorway. A short iron ice pick rests on it, its handle wrapped in dry leather.
+A low workbench stands beside an open doorway.
+A short iron ice pick rests on it, its handle wrapped in dry leather.
 
 ## Intro message
 
-You enter a cramped workshop. An iron pick waits on the workbench.
+You enter a cramped workshop.
+An iron pick waits on the workbench.
 
 ## Current state
 
-The ice pick is portable. If removed, describe the empty workbench instead. Update descriptions and entry narration when their described facts change.
+The ice pick is portable.
+If removed, describe the empty workbench instead.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -35,3 +39,5 @@ The ice pick is portable. If removed, describe the empty workbench instead. Upda
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

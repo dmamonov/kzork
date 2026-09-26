@@ -16,15 +16,19 @@ media:
 
 ## Description
 
-A brass bell hangs above a circular floor. Beside it waits a patient figure dressed in stitched white wool: the glacier keeper.
+A brass bell hangs above a circular floor.
+Beside it waits a patient figure dressed in stitched white wool: the glacier keeper.
 
 ## Intro message
 
-A bell gives one clear note. The keeper inclines their head in greeting.
+A bell gives one clear note.
+The keeper inclines their head in greeting.
 
 ## Current state
 
-The bell is scenery. Ringing it produces a note without changing puzzle state. Update descriptions and entry narration when their described facts change.
+The bell is scenery.
+Ringing it produces a note without changing puzzle state.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -36,3 +40,5 @@ The bell is scenery. Ringing it produces a note without changing puzzle state. U
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

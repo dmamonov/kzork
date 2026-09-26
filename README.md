@@ -1,8 +1,8 @@
 # kzork
 
 This project uses [Gradle](https://gradle.org/).
-To build and run the application, use the *Gradle* tool window by clicking the Gradle icon in the right-hand toolbar,
-or run it directly from the terminal:
+To build and run the application, use the *Gradle* tool window by clicking the Gradle icon in the right-hand toolbar, or
+run it directly from the terminal:
 
 * Run `./gradlew run` to build and run the application.
 * Run `./gradlew build` to only build the application.
@@ -19,5 +19,5 @@ This is the suggested way to use Gradle in production projects.
 This project follows the suggested multi-module setup and consists of the `app` and `utils` subprojects.
 The shared build logic was extracted to a convention plugin located in `buildSrc`.
 
-This project uses a version catalog (see `gradle/libs.versions.toml`) to declare and version dependencies
-and both a build cache and a configuration cache (see `gradle.properties`).
+This project uses a version catalog (see `gradle/libs.versions.toml`) to declare and version dependencies and both a
+build cache and a configuration cache (see `gradle.properties`).

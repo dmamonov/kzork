@@ -15,7 +15,8 @@ media:
 
 ## Description
 
-Wind has pushed a soft mound of snow into this quiet corner. Old boot prints lead north toward a workshop.
+Wind has pushed a soft mound of snow into this quiet corner.
+Old boot prints lead north toward a workshop.
 
 ## Intro message
 
@@ -23,7 +24,9 @@ Old footprints cross the snow and continue north.
 
 ## Current state
 
-The footprints are a navigation clue. The snow contains no hidden item. Update descriptions and entry narration when their described facts change.
+The footprints are a navigation clue.
+The snow contains no hidden item.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -33,3 +36,5 @@ The footprints are a navigation clue. The snow contains no hidden item. Update d
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

@@ -1,6 +1,7 @@
 package kzork.tools
 
 import kotlinx.serialization.json.*
+import kzork.model.MarkdownFormatting
 import org.yaml.snakeyaml.LoaderOptions
 import org.yaml.snakeyaml.DumperOptions
 import org.yaml.snakeyaml.Yaml
@@ -9,9 +10,19 @@ import org.yaml.snakeyaml.constructor.SafeConstructor
 /** Unknown header fields and narrative sections survive edits. YAML comments are presentation only. */
 internal data class MarkdownDocument(val metadata: JsonObject, val body: String, val history: String) {
     fun render(): String {
-        val options = DumperOptions().apply { defaultFlowStyle = DumperOptions.FlowStyle.BLOCK; isPrettyFlow = true }
-        val header = Yaml(options).dump(plainValue(metadata)).trimEnd()
-        return "---\n$header\n---\n\n${body.trim()}\n\n## Changelog\n\n${history.trim()}\n"
+        val options = DumperOptions().apply { defaultFlowStyle = DumperOptions.FlowStyle.BLOCK; isPrettyFlow = true
+            width = MarkdownFormatting.MAX_LINE_WIDTH; splitLines = true }
+        // SnakeYAML's width is a preferred break column, not a hard maximum.
+        // Tighten it until the emitted header meets the shared limit, or reject an indivisible value.
+        var header: String
+        while (true) {
+            header = Yaml(options).dump(plainValue(metadata)).trimEnd()
+            val overflow = header.lineSequence().maxOf { it.codePointCount(0, it.length) } -
+                MarkdownFormatting.MAX_LINE_WIDTH
+            if (overflow <= 0 || options.width == 1) break
+            options.width = (options.width - overflow - 1).coerceAtLeast(1)
+        }
+        return MarkdownFormatting.format("---\n$header\n---\n\n${body.trim()}\n\n## Changelog\n\n${history.trim()}\n")
     }
     fun logged(entry: String) = copy(history = listOf(history.trim(), "- $entry").filter { it.isNotEmpty() }.joinToString("\n"))
     fun fields(vararg fields: Pair<String, JsonElement>) = copy(metadata = JsonObject(metadata + fields))
@@ -44,7 +55,7 @@ internal data class MarkdownDocument(val metadata: JsonObject, val body: String,
             val history = if (split == null) "" else narrative.substring(split.range.last + 1).trim()
             require(!Regex("(?m)^#{1,2} ").containsMatchIn(history)) { "Changelog must be the final section" }
             require(body.startsWith("# ")) { "Page needs a Markdown title" }
-            return MarkdownDocument(metadata, body, history)
+            return MarkdownDocument(metadata, MarkdownFormatting.format(body).trim(), MarkdownFormatting.format(history).trim())
         }
 
         private fun yamlValue(value: Any?): JsonElement = when (value) {

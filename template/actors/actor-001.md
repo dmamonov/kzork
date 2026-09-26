@@ -14,8 +14,8 @@ carried_objects: []
 
 ## Current state
 
-{{Current condition, intentions, and other relevant mutable facts. The visibility of private actor information remains
-to be designed.}}
+{{Current condition, intentions, and other relevant mutable facts.
+The visibility of private actor information remains to be designed.}}
 
 ## Changelog
 
@@ -24,3 +24,5 @@ to be designed.}}
 - Template revision: moved structured fields into YAML front matter.
 
 - Template revision: marked location as automatically derived from membership.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

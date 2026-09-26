@@ -15,15 +15,19 @@ media:
 
 ## Description
 
-A shallow pool reflects the ceiling like dark glass. On the north wall, a copper arrow points toward a red glow.
+A shallow pool reflects the ceiling like dark glass.
+On the north wall, a copper arrow points toward a red glow.
 
 ## Intro message
 
-Water drips into a shallow pool. A copper arrow points north toward warmth.
+Water drips into a shallow pool.
+A copper arrow points north toward warmth.
 
 ## Current state
 
-The pool is safe scenery. The northward arrow points to the ember alcove. Update descriptions and entry narration when their described facts change.
+The pool is safe scenery.
+The northward arrow points to the ember alcove.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -33,3 +37,5 @@ The pool is safe scenery. The northward arrow points to the ember alcove. Update
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

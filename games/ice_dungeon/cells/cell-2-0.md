@@ -16,15 +16,20 @@ media:
 
 ## Description
 
-An altar rises from the blue floor. A palm-sized golden stone is sealed in clear ice upon it. The carving below reads: “Living warmth opens winter’s hand.”
+An altar rises from the blue floor.
+A palm-sized golden stone is sealed in clear ice upon it.
+The carving below reads: “Living warmth opens winter’s hand.”
 
 ## Intro message
 
-A little sun glows inside the frozen altar. Its light casts no warmth—yet.
+A little sun glows inside the frozen altar.
+Its light casts no warmth—yet.
 
 ## Current state
 
-The altar itself is fixed. Describe its ice from the sunstone’s current state; once thawed, describe meltwater, and once taken, an empty altar. Update descriptions and entry narration when their described facts change.
+The altar itself is fixed.
+Describe its ice from the sunstone’s current state; once thawed, describe meltwater, and once taken, an empty altar.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -34,3 +39,5 @@ The altar itself is fixed. Describe its ice from the sunstone’s current state;
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

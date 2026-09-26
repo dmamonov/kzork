@@ -15,7 +15,9 @@ media:
 
 ## Description
 
-Empty shelves glitter beneath thick frost. A maintenance inscription is cut deeply into the wall: “Free the ember with iron. Let the ember free the sun.”
+Empty shelves glitter beneath thick frost.
+A maintenance inscription is cut deeply into the wall: “Free the ember with iron.
+Let the ember free the sun.”
 
 ## Intro message
 
@@ -23,7 +25,8 @@ Frost covers the shelves, but the old maintenance inscription is still legible.
 
 ## Current state
 
-The inscription supplies the full two-stage puzzle clue. Update descriptions and entry narration when their described facts change.
+The inscription supplies the full two-stage puzzle clue.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -33,3 +36,5 @@ The inscription supplies the full two-stage puzzle clue. Update descriptions and
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

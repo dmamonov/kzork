@@ -38,9 +38,10 @@ exceptional_connections: [ ]
 
 ## Coordinates and movement
 
-The northwest cell is (0, 0). East increases x; south increases y. North decreases y; west decreases x. All nine cells
-exist. Every orthogonally adjacent pair is traversable both ways; the outside boundary is solid rock. A move beyond the
-grid leaves the player in place.
+The northwest cell is (0, 0).
+East increases x; south increases y. North decreases y; west decreases x. All nine cells exist.
+Every orthogonally adjacent pair is traversable both ways; the outside boundary is solid rock.
+A move beyond the grid leaves the player in place.
 
 |       | x = 0        | x = 1              | x = 2              |
 |-------|--------------|--------------------|--------------------|
@@ -55,3 +56,5 @@ None.
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

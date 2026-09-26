@@ -30,8 +30,9 @@ media:
 
 ## Movement
 
-{{Local movement conditions. Ordinary grid adjacency rules are still undecided. Exceptional connections are indexed in
-world.md.}}
+{{Local movement conditions.
+Ordinary grid adjacency rules are still undecided.
+Exceptional connections are indexed in world.md.}}
 
 ## Changelog
 
@@ -40,3 +41,5 @@ world.md.}}
 - Template revision: moved structured fields into YAML front matter.
 
 - Template revision: identified occupant lists as authoritative placement data.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

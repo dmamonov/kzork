@@ -16,15 +16,19 @@ media:
 
 ## Description
 
-A red ember glows in a shallow socket on the wall, pinned beneath a brittle crust of ice. A scratch beside it reads: “Chip the rim, not the flame.”
+A red ember glows in a shallow socket on the wall, pinned beneath a brittle crust of ice.
+A scratch beside it reads: “Chip the rim, not the flame.”
 
 ## Intro message
 
-Red light pulses through a brittle crust. Something warm is trapped beneath it.
+Red light pulses through a brittle crust.
+Something warm is trapped beneath it.
 
 ## Current state
 
-Use the ember page for whether the crust remains. If the ember is removed, the socket is empty. Update descriptions and entry narration when their described facts change.
+Use the ember page for whether the crust remains.
+If the ember is removed, the socket is empty.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -35,3 +39,5 @@ Use the ember page for whether the crust remains. If the ember is removed, the s
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.

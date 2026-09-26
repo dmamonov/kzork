@@ -15,15 +15,18 @@ media:
 
 ## Description
 
-Long icicles hum softly above a dry stone path. To the east, gold flickers inside the ice of the sanctuary.
+Long icicles hum softly above a dry stone path.
+To the east, gold flickers inside the ice of the sanctuary.
 
 ## Intro message
 
-The icicles sing as you pass. A golden gleam waits to the east.
+The icicles sing as you pass.
+A golden gleam waits to the east.
 
 ## Current state
 
-The path is safe; the sound is atmospheric and contains no secret code. Update descriptions and entry narration when their described facts change.
+The path is safe; the sound is atmospheric and contains no secret code.
+Update descriptions and entry narration when their described facts change.
 
 ## Movement
 
@@ -34,3 +37,5 @@ The path is safe; the sound is atmospheric and contains no secret code. Update d
 ## Changelog
 
 - Initialization: established the starting game content and state; no turns have been played.
+
+- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
