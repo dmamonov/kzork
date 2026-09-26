@@ -16,7 +16,8 @@ media:
 
 ## Description
 
-A red ember glows in a shallow socket on the wall, pinned beneath a brittle crust of ice.
+A red ember glows in a shallow socket on the wall, pinned beneath a brittle
+crust of ice.
 A scratch beside it reads: “Chip the rim, not the flame.”
 
 ## Intro message
@@ -38,6 +39,10 @@ Update descriptions and entry narration when their described facts change.
 
 ## Changelog
 
-- Initialization: established the starting game content and state; no turns have been played.
+- Initialization: established the starting game content and state; no turns have
+  been played.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

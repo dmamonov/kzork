@@ -23,19 +23,26 @@ Puzzle state is stored on the ember and sunstone pages.
 
 Cell objects and actors lists establish direct placement.
 Actor carried_objects lists establish inventory placement.
-After applying explicit membership changes, derive every entity's location from its sole holder and derive current_cell
-from the player's cell.
-A carried object's location references its actor; its effective cell follows that actor.
+After applying explicit membership changes, derive every entity's location from
+its sole holder and derive current_cell from the player's cell.
+A carried object's location references its actor; its effective cell follows
+that actor.
 
-Validate that each entity has exactly one holder, references exist, and actor references belong in actors lists.
+Validate that each entity has exactly one holder, references exist, and actor
+references belong in actors lists.
 Apply removals and additions together.
-Recompute location fields automatically; never move an entity by editing only its location.
+Recompute location fields automatically; never move an entity by editing only
+its location.
 Log every changed page, including derived changes, against the same step.
 Do not advance the loop on a conflict.
 These are game rules for the future updater, not an implemented tool.
 
 ## Changelog
 
-- Initialization: established the starting game content and state; no turns have been played.
+- Initialization: established the starting game content and state; no turns have
+  been played.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

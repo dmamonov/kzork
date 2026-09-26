@@ -25,4 +25,7 @@ The visibility of private actor information remains to be designed.}}
 
 - Template revision: marked location as automatically derived from membership.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

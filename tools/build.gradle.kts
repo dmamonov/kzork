@@ -25,7 +25,7 @@ tasks.test {
 val markdownRoot = rootProject.projectDir.absolutePath
 tasks.register<JavaExec>("formatMarkdown") {
     group = "formatting"
-    description = "Format repository Markdown: 120 characters and one sentence per source line."
+    description = "Format repository Markdown: 80 characters and one sentence per source line."
     classpath = sourceSets.main.get().runtimeClasspath
     mainClass.set("kzork.tools.FormatMarkdownKt")
     args(markdownRoot)

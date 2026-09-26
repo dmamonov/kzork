@@ -20,6 +20,10 @@ Cold is atmospheric; this adventure has no health or exposure timer.
 
 ## Changelog
 
-- Initialization: established the starting game content and state; no turns have been played.
+- Initialization: established the starting game content and state; no turns have
+  been played.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

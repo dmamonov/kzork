@@ -16,7 +16,8 @@ media:
 ## Description
 
 Empty shelves glitter beneath thick frost.
-A maintenance inscription is cut deeply into the wall: “Free the ember with iron.
+A maintenance inscription is cut deeply into the wall: “Free the ember with
+iron.
 Let the ember free the sun.”
 
 ## Intro message
@@ -35,6 +36,10 @@ Update descriptions and entry narration when their described facts change.
 
 ## Changelog
 
-- Initialization: established the starting game content and state; no turns have been played.
+- Initialization: established the starting game content and state; no turns have
+  been played.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

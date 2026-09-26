@@ -2,7 +2,8 @@
 id: cell-0-0
 coordinates: {x: 0, y: 0}
 world: ../world.md
-# Authoritative placement references; entity locations are derived from these lists.
+# Authoritative placement references.
+# Entity locations are derived from these lists.
 objects:
   - ../objects/object-001.md
 actors:
@@ -10,7 +11,9 @@ actors:
   - ../actors/actor-001.md
 media:
   cover_image: {path: ../media/images/cell-0-0-cover.png, status: not-generated}
-  ambient_music: {path: ../media/music/cell-0-0-ambient.ogg, status: not-generated}
+  ambient_music:
+    path: ../media/music/cell-0-0-ambient.ogg
+    status: not-generated
   intro_speech: {path: ../media/voice/cell-0-0-intro.ogg, status: not-generated}
 ---
 
@@ -42,4 +45,7 @@ Exceptional connections are indexed in world.md.}}
 
 - Template revision: identified occupant lists as authoritative placement data.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

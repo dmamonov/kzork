@@ -15,9 +15,11 @@ media:
 
 The village hearth has gone cold.
 Its sunstone lies frozen in a small sanctuary beneath the glacier.
-Enter the nine chambers, release the stone, and bring it back to the entrance before beginning your journey home.
+Enter the nine chambers, release the stone, and bring it back to the entrance
+before beginning your journey home.
 
-A short exploration adventure with two simple object puzzles and one helpful actor.
+A short exploration adventure with two simple object puzzles and one helpful
+actor.
 There is no combat, hunger, time limit, or random damage.
 Ambient blue ice provides enough light everywhere.
 
@@ -30,7 +32,8 @@ Somewhere ahead, a small bell rings.
 
 ## Rules for the game master
 
-The player can move north, east, south, or west; look; examine; take; drop; talk; and use an object on another.
+The player can move north, east, south, or west; look; examine; take; drop;
+talk; and use an object on another.
 Interpret equivalent natural-language commands.
 All orthogonally adjacent grid cells are connected in both directions.
 There are no diagonal moves, tunnels, or warps in this game.
@@ -55,10 +58,15 @@ This is a resolved game-master outcome, not an automatic consequence of prose.
 
 At the entrance, daylight catches the sunstone in your hands.
 Warmth settles into your fingers.
-Far below the glacier, the village waits—and this time you have brought its dawn.
+Far below the glacier, the village waits—and this time you have brought its
+dawn.
 
 ## Changelog
 
-- Initialization: established the starting game content and state; no turns have been played.
+- Initialization: established the starting game content and state; no turns have
+  been played.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

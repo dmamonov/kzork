@@ -1,14 +1,14 @@
 # Media storage
 
-Store cover and step images in `images/`, ambient and game music in `music/`, sound effects in `sounds/`, and generated
-narration in `voice/`.
+Store cover and step images in `images/`, ambient and game music in `music/`,
+sound effects in `sounds/`, and generated narration in `voice/`.
 
 No media has been generated.
 `.gitkeep` files preserve the empty directories and are not game assets.
 Example filenames and formats on the pages are provisional.
 
-Reference assets in YAML front matter on the relevant game, cell, or step page, using paths relative to that page and an
-explicit generation status.
+Reference assets in YAML front matter on the relevant game, cell, or step page,
+using paths relative to that page and an explicit generation status.
 Optional body links can present existing assets.
 Keep narration source text in Markdown.
 When an asset reference changes, update that page's content and changelog.
@@ -20,4 +20,7 @@ How historical media versions are retained remains undecided.
 
 - Template revision: documented media references in YAML front matter.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

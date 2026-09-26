@@ -27,7 +27,8 @@ Ahead, blue corridors lead into the glacier.
 
 ## Current state
 
-The outside road is scenery until the victory narration; there is no additional cell beyond the grid.
+The outside road is scenery until the victory narration; there is no additional
+cell beyond the grid.
 Update descriptions and entry narration when their described facts change.
 
 ## Movement
@@ -38,6 +39,10 @@ Update descriptions and entry narration when their described facts change.
 
 ## Changelog
 
-- Initialization: established the starting game content and state; no turns have been played.
+- Initialization: established the starting game content and state; no turns have
+  been played.
 
-- Formatting: wrapped source lines to 120 characters and placed each prose sentence on its own line.
+- Formatting: wrapped source lines to 120 characters and placed each prose
+  sentence on its own line.
+
+- Formatting: reduced the maximum source line width to 80 characters.

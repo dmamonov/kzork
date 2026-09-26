@@ -21,3 +21,5 @@ location: ../cells/cell-0-0.md
 - Template revision: moved structured fields into YAML front matter.
 
 - Template revision: marked location as automatically derived from membership.
+
+- Formatting: reduced the maximum source line width to 80 characters.

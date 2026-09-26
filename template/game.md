@@ -28,3 +28,5 @@ media:
 - Initialization: created the game page.
 
 - Template revision: moved structured fields into YAML front matter.
+
+- Formatting: reduced the maximum source line width to 80 characters.

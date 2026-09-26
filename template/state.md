@@ -18,8 +18,11 @@ pending_work: []
 
 ## Changelog
 
-- Initialization: established the illustrative starting location and initial loop phase.
+- Initialization: established the illustrative starting location and initial
+  loop phase.
 
 - Template revision: moved structured fields into YAML front matter.
 
 - Template revision: marked current_cell as automatically derived.
+
+- Formatting: reduced the maximum source line width to 80 characters.
