@@ -93,11 +93,16 @@ class GameSession(val directory: Path, val files: GameFiles, private val engine:
                 error = e.message?.take(350) ?: "The turn could not be completed"
                 append(ChatEvent("error-${UUID.randomUUID()}", "error", "The story is paused", error!!))
             } finally {
-                synchronizeAppliedTurn()
-                pending = files.state().metadata.string("active_step").isNotBlank()
-                currentOutcome = files.outcome(); currentScene = files.scene()
-                automatic = false; busy.set(false)
-                status = if (error != null) "Paused — see the message below" else if (currentOutcome == "won") "Adventure complete" else "What will you do?"
+                try {
+                    synchronizeAppliedTurn()
+                    pending = files.state().metadata.string("active_step").isNotBlank()
+                    currentOutcome = files.outcome(); currentScene = files.scene()
+                } catch (e: Exception) {
+                    error = e.message?.take(350) ?: "Saved state needs inspection before continuing"
+                } finally {
+                    automatic = false; busy.set(false)
+                    status = if (error != null) "Paused — see the message below" else if (currentOutcome == "won") "Adventure complete" else "What will you do?"
+                }
             }
         }
     }
@@ -149,9 +154,10 @@ class GameSession(val directory: Path, val files: GameFiles, private val engine:
             "- Created: appended to this adventure's transcript.")
         val destination = eventDirectory.resolve("event-${events.size.toString().padStart(6, '0')}.md")
         val temporary = eventDirectory.resolve(".event.tmp")
-        temporary.writeText(doc.render())
+        val encoded = doc.render()
+        temporary.writeText(encoded)
         Files.move(temporary, destination, ATOMIC_MOVE, REPLACE_EXISTING)
-        events.add(event)
+        events.add(event.copy(text = MarkdownDocument.parse(encoded).section("Message")))
     }
     override fun close() { automatic = false; scope.cancel() }
 

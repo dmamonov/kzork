@@ -16,6 +16,7 @@ dependencies {
     implementation("io.ktor:ktor-client-cio:$ktorVersion")
     implementation("org.slf4j:slf4j-simple:2.0.17")
     testImplementation(kotlin("test"))
+    testImplementation("io.ktor:ktor-client-mock:$ktorVersion")
     testImplementation("io.ktor:ktor-server-test-host:$ktorVersion")
 }
 application { mainClass = "kzork.app.AppKt" }

@@ -6,7 +6,6 @@ import io.ktor.client.plugins.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
-import kotlinx.coroutines.delay
 import kotlinx.serialization.json.*
 import java.io.Closeable
 import java.util.concurrent.atomic.AtomicInteger
@@ -16,8 +15,12 @@ interface AgentClient {
                     execute: suspend (String, JsonObject) -> JsonObject = { _, _ -> error("No tools") }): String
 }
 
-class ResponsesClient(private val key: String, private val model: String, private val maxRequests: Int = 300) : AgentClient, Closeable {
-    private val client = HttpClient(CIO) { install(HttpTimeout) { requestTimeoutMillis = 120_000; connectTimeoutMillis = 20_000 } }
+class ResponsesClient(
+    private val key: String, private val model: String, private val maxRequests: Int = 300,
+    private val client: HttpClient = HttpClient(CIO) {
+        install(HttpTimeout) { requestTimeoutMillis = 120_000; connectTimeoutMillis = 20_000 }
+    },
+) : AgentClient, Closeable {
     private val requests = AtomicInteger()
     override suspend fun run(instructions: String, input: String, tools: List<JsonObject>, execute: suspend (String, JsonObject) -> JsonObject): String {
         val conversation = mutableListOf<JsonElement>(buildJsonObject { put("role", "user"); put("content", input) })

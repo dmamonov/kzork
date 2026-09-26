@@ -119,15 +119,14 @@ Do not merely delete the journal to bypass the guard.
 
 ## Tests
 
-Run `./gradlew :tools:test` with the project's Java 23 toolchain.
+Run `./gradlew :tools:test` with the project's Java 21 toolchain.
 Tests copy `games/ice_dungeon` into temporary directories and never mutate the
 source adventure.
 They cover memberships, derived fields, inventories, no-op turns, page creation,
 stale revisions, role checks, path isolation, YAML safety, protected history,
 and interrupted-update detection.
 
-The initial verification used an external Gradle init script to select locally
-installed Java 21; the repository's Java 23 requirement was not changed.
+The browser runtime and all modules now use the installed Java 21 toolchain.
 
 ## Markdown formatting
 

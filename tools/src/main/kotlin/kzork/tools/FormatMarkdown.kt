@@ -9,7 +9,7 @@ import kotlin.io.path.*
 fun main(args: Array<String>) {
     val check = "--check" in args
     val root = Path.of(args.firstOrNull { it != "--check" } ?: ".").toRealPath()
-    val excluded = setOf(".git", ".gradle", ".idea", "build", "node_modules")
+    val excluded = setOf(".git", ".gradle", ".idea", "build", "node_modules", ".sessions")
     val paths = Files.walk(root).use { stream -> stream.filter { path ->
         path.extension == "md" && !Files.isSymbolicLink(path) &&
             root.relativize(path).none { it.toString() in excluded }

@@ -258,18 +258,39 @@ Direct references and an index may suffice for a small world; text search may
 help with larger worlds and step histories.
 Semantic search is not assumed.
 
-## UI/UX: agreed content and open choices
+## UI/UX and running the game
 
-The player sends commands and receives the description of what happens.
-The current cell supplies a cover image, ambient music, and narrated entry
-message.
-The game supplies its own opening presentation.
-Step-specific images, sounds, and voice can support the events.
+The Ktor server runs locally and opens the browser automatically.
+Each playthrough gets its own copy of the authored world under `.sessions/`.
+The interface is one continuous, append-only chat.
+Player commands, resolved outcomes, and location entries remain in its history.
 
-Still to design: screen layout, command input, inspection of objects and actors,
-turn history, agent activity indicators, audio controls, transitions between
-cells, and which information is visible to the player versus private to agents.
-Markdown storage does not imply that every page is exposed to the player.
+A fixed command box accepts actions.
+New content follows the scroll position only when the player is near the end.
+A new-events button returns to the latest messages.
+The game cover and opening speech appear at the beginning.
+Location changes append their cover image and narrated intro.
+
+Ambient music follows the location.
+Music, effects, and narration have separate volume controls and a global mute.
+The first Begin adventure click enables browser audio.
+Submitting a command interrupts narration; messages can be replayed.
+Ready image/audio assets are loaded from the game metadata.
+Procedural illustrations, synthesized ambience, and browser speech provide local
+fallbacks.
+Runtime production of new image and audio assets remains a future extension.
+
+Agent plays lets a player agent choose commands using only public observations
+and the chat history.
+It has a selected turn budget and stops on completion or failure.
+Pause finishes the active turn before returning control to the player.
+The offline demo uses a labeled deterministic guide instead of an AI player.
+
+Sessions and chat events persist as Markdown.
+Refreshing restores the transcript.
+A resolved turn with unfinished state updates offers a retry action.
+The server must be resumed explicitly after shutdown, and automatic play never
+restarts by itself after a server restart.
 
 ## Further decisions
 
@@ -298,3 +319,6 @@ Discuss one area at a time, beginning with the storage draft:
   sentence on its own line.
 
 - Formatting: reduced the maximum source line width to 80 characters.
+
+- Implementation: added the Ktor chat runtime, saved sessions, audio controls,
+  and optional agent-player mode.

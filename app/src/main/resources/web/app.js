@@ -20,7 +20,7 @@ document.querySelectorAll('.close-panel').forEach(button => button.onclick = clo
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closePanels(); });
 $('begin').onclick = async () => {
   await audio.unlock();
-  try { await api('begin'); await poll(); $('command').focus(); } catch(error) { problem(error.message); }
+  try { await api('begin'); await poll(); $('command').focus(); window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}); } catch(error) { problem(error.message); }
 };
 async function submit(command) {
   if (!command.trim() || pendingRequest || state?.busy || state?.automatic) return;
@@ -78,7 +78,7 @@ async function poll() {
     const response=await fetch('/api/state?after='+cursor,{headers:{'X-Game-Token':token}});
     if(!response.ok) throw new Error('Cannot reach the adventure. Keep this page open; reconnecting…');
     const next=await response.json();
-    $('welcome').hidden=next.started;
+    $('welcome').hidden=next.started; document.body.classList.toggle('not-started',!next.started);
     next.events.forEach(event=>renderEvent(event,initial)); cursor+=next.events.length;
     state=next;
     $('mode').textContent=next.mode === 'demo' ? 'OFFLINE DEMO' : 'LIVE AI';
@@ -96,6 +96,7 @@ async function poll() {
     $('win').hidden=next.outcome!=='won';
     document.querySelectorAll('[data-command]').forEach(button=>button.disabled=$('command').disabled);
     audio.location(next.scene);
+    if(next.error) problem(next.error);
     if(initial && next.started) window.scrollTo(0,document.body.scrollHeight);
     initial=false;
     if(!$('connection-error').hidden && $('connection-error').textContent.startsWith('Cannot reach')) problem('');

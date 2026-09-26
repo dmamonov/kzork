@@ -40,3 +40,7 @@ tasks.register<JavaExec>("checkMarkdown") {
 tasks.named("check") {
     dependsOn("checkMarkdown")
 }
+// When both tasks are requested, check the formatted output, never race the writer.
+tasks.named("checkMarkdown") {
+    mustRunAfter("formatMarkdown")
+}
